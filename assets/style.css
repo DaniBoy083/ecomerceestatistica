@@ -1,0 +1,133 @@
+/* =========================================================
+   E-Commerce Analytics Dashboard — Estilos Globais
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Reset & Base ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary:    #6C63FF;
+  --primary-dk: #5046e4;
+  --accent:     #FF6584;
+  --bg:         #F0F2F8;
+  --surface:    #FFFFFF;
+  --text:       #1A1A2E;
+  --muted:      #6B7280;
+  --border:     #E5E7EB;
+  --radius:     12px;
+  --shadow:     0 2px 12px rgba(108,99,255,.12);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dk) 100%);
+  color: #fff;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(108,99,255,.3);
+}
+.header-inner { max-width: 1400px; margin: auto; }
+.logo-block { display: flex; align-items: center; gap: 1rem; }
+.logo-icon { font-size: 2.5rem; }
+.app-title { font-size: 1.75rem; font-weight: 700; letter-spacing: -.5px; }
+.app-subtitle { font-size: .875rem; opacity: .8; margin-top: .2rem; }
+
+/* ── KPI Section ────────────────────────────────────────── */
+.kpi-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem;
+}
+.kpi-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .35rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--primary);
+  transition: transform .2s;
+}
+.kpi-card:hover { transform: translateY(-3px); }
+.kpi-icon { font-size: 1.6rem; }
+.kpi-label { font-size: .75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.kpi-value { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+
+/* ── Filter Section ─────────────────────────────────────── */
+.filter-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 1.25rem auto 0;
+  padding: 0 1.5rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+@media (max-width: 768px) {
+  .filter-section { grid-template-columns: 1fr; }
+}
+.filter-group { display: flex; flex-direction: column; gap: .5rem; }
+.filter-label { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+
+/* ── Charts Grid ─────────────────────────────────────────── */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
+  gap: 1.25rem;
+  max-width: 1400px;
+  margin: 1.25rem auto 0;
+  padding: 0 1.5rem 1.5rem;
+}
+@media (max-width: 768px) {
+  .charts-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem 1rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow .25s;
+}
+.card:hover { box-shadow: 0 6px 24px rgba(108,99,255,.2); }
+.card-title {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: .5rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: .5rem;
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: .8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+/* ── Dash overrides ──────────────────────────────────────── */
+.Select-control { border-radius: 8px !important; border-color: var(--border) !important; }
+.Select-control:hover { border-color: var(--primary) !important; }
