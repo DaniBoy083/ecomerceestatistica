@@ -115,7 +115,6 @@ def fig_desconto_vs_vendas(df: pd.DataFrame) -> go.Figure:
         title="Impacto do Desconto nas Vendas",
         labels={"Desconto": "Desconto (%)", "Qtd_Vendidos_Num": "Qtd. Vendidos"},
         color_discrete_sequence=PALETTE,
-        trendline="ols",
     )
     fig.update_layout(**_LAYOUT_BASE)
     return fig
